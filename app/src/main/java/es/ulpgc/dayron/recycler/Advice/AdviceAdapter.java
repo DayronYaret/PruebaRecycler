@@ -61,4 +61,6 @@ public class AdviceAdapter extends RecyclerView.Adapter<AdviceAdapter.ViewHolder
 
         holder.contentView.setText(itemList.get(position).titulo);
     }
+
+
 }

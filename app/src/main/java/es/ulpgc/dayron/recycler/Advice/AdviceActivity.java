@@ -23,7 +23,7 @@ public class AdviceActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advice);
 
-        listAdapter = new AdviceAdapter(new View.OnClickListener() {
+        listAdapter = new AdviceAdapter(new View.OnClickListener() { // TODO: Hacer el clicklistener
 
             @Override
             public void onClick(View view) {

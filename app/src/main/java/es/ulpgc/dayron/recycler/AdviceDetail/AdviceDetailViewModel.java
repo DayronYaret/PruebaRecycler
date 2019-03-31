@@ -1,6 +1,8 @@
 package es.ulpgc.dayron.recycler.AdviceDetail;
 
-public class AdviceDetailViewModel {
+import es.ulpgc.dayron.recycler.Advice.AdviceActivity;
+import es.ulpgc.dayron.recycler.data.AdviceItem;
 
-    public String data;
+public class AdviceDetailViewModel {
+    public AdviceItem item;
 }

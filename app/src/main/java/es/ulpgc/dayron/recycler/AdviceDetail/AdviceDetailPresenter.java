@@ -4,6 +4,8 @@ import android.util.Log;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.dayron.recycler.data.AdviceItem;
+
 public class AdviceDetailPresenter implements AdviceDetailContract.Presenter {
 
     public static String TAG = AdviceDetailPresenter.class.getSimpleName();
@@ -35,23 +37,15 @@ public class AdviceDetailPresenter implements AdviceDetailContract.Presenter {
     @Override
     public void fetchData() {
         // Log.e(TAG, "fetchData()");
-
-        // set passed state
-        AdviceDetailState state = router.getDataFromPreviousScreen();
-        if (state != null) {
-            viewModel.data = state.data;
+        AdviceItem item = router.getDataFromPreviousScreen();
+        if(item !=null){
+            viewModel.item = item;
         }
+        if(viewModel.item.descripcion !=null){
+            view.get().displayData(viewModel);
 
-        if (viewModel.data == null) {
-            // call the model
-            String data = model.fetchData();
-
-            // set initial state
-            viewModel.data = data;
         }
-
         // update the view
-        view.get().displayData(viewModel);
 
     }
 

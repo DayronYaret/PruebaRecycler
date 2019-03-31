@@ -27,7 +27,8 @@ public class AdviceActivity
 
             @Override
             public void onClick(View view) {
-
+                AdviceItem item = (AdviceItem) view.getTag();
+                presenter.selectAdviceListData(item);
             }
         });
         RecyclerView recyclerView = findViewById(R.id.adviceList);

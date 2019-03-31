@@ -2,6 +2,8 @@ package es.ulpgc.dayron.recycler.AdviceDetail;
 
 import java.lang.ref.WeakReference;
 
+import es.ulpgc.dayron.recycler.data.AdviceItem;
+
 interface AdviceDetailContract {
 
     interface View {
@@ -25,7 +27,6 @@ interface AdviceDetailContract {
     }
 
     interface Router {
-
-        AdviceDetailState getDataFromPreviousScreen();
+        AdviceItem getDataFromPreviousScreen();
     }
 }

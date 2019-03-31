@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 
 import es.ulpgc.dayron.recycler.app.AdviceMediator;
+import es.ulpgc.dayron.recycler.data.AdviceItem;
 
 public class AdviceDetailRouter implements AdviceDetailContract.Router {
 
@@ -18,8 +19,8 @@ public class AdviceDetailRouter implements AdviceDetailContract.Router {
 
 
     @Override
-    public AdviceDetailState getDataFromPreviousScreen() {
-        AdviceDetailState state = mediator.getAdviceDetailState();
-        return state;
+    public AdviceItem getDataFromPreviousScreen() {
+        AdviceItem item = mediator.getAdvice();
+        return item;
     }
 }

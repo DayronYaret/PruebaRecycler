@@ -17,19 +17,14 @@ public class AdviceDetailActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_advice_detail);
         //setContentView(R.layout.activity_advice_detail);
 
         // do the setup
         AdviceDetailScreen.configure(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        // do some work
         presenter.fetchData();
     }
+
 
     @Override
     public void injectPresenter(AdviceDetailContract.Presenter presenter) {
@@ -39,7 +34,7 @@ public class AdviceDetailActivity
     @Override
     public void displayData(AdviceDetailViewModel viewModel) {
         //Log.e(TAG, "displayData()");
-
+        ((TextView)findViewById(R.id.resultado)).setText(viewModel.item.descripcion);
         // deal with the data
 
     }
